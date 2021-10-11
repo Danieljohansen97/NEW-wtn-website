@@ -3,6 +3,7 @@ import React from 'react'
 import axios from "axios";
 
 const fetchInstagramPhotos = async (accountUrl) => {
+    const instagramRegExp = new RegExp(/<script type="text\/javascript">window\._sharedData = (.*)<\/script>/)
     const response = await axios.get(accountUrl)
     const json = JSON.parse(response.data.match(instagramRegExp)[1])
     const edges = json.entry_data.ProfilePage[0].graphql.user.edge_owner_to_timeline_media.edges.splice(0, 8)
