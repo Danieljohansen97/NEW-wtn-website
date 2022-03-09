@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HomePage from "./components/homePage/HomePage";
 import About from "./components/about/About";
 import Gallery from "./components/gallery/Gallery";
+import Contact from "./components/contact/Contact";
 // Bootstrap imports
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
@@ -22,11 +23,14 @@ function App() {
                 <Nav.Link as={Link} to="/">
                   Hjem
                 </Nav.Link>
-                <Nav.Link as={ Link } to="/about">
+                <Nav.Link as={Link} to="/about">
                   Om oss
                 </Nav.Link>
-                <Nav.Link as={ Link } to="/gallery">
+                <Nav.Link as={Link} to="/gallery">
                   Bilder
+                </Nav.Link>
+                <Nav.Link as={Link} to="/contact">
+                  Kontakt Oss
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>
@@ -42,6 +46,9 @@ function App() {
           </Route>
           <Route path="/gallery">
             <Gallery />
+          </Route>
+          <Route path="/contact">
+            <Contact />
           </Route>
         </Switch>
       </Router>
